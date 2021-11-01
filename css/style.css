@@ -1,0 +1,425 @@
+/*
+in my head, I want to have a style.css for all the different pages
+where I keep the style of the reusable elements.
+for example top-nav, footer and sections with the same boxed layout
+*/
+
+/* styles for the front-page elements only. */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: #333;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    min-height: 100vh;
+}
+
+header .container {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+
+header .container .navbar {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*
+styling the logo text, because no icon or image has been used
+*/
+header .container .navbar .logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #40e2a0;
+    font-weight: 700;
+}
+
+header .container .navbar {
+    margin-right:1rem;
+}
+
+header .container .navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+
+header .container .navbar .nav-links li {
+    list-style-type: none;
+}
+
+/* styling the a-links */
+header .container .navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 1rem;
+    font-weight: 400;
+    font-size: 1.05rem;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: transparent;
+}
+
+header .container .navbar .nav-links li.buttons > a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 1rem;
+    font-weight: 400;
+    font-size: 1.05rem;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+
+header .container .navbar .nav-links li.buttons > a:first-child {
+    border: 1px solid transparent;
+    background: #40e2a0;
+}
+
+/* styling the background to appear as a underline on hover */
+header .container .navbar .nav-links li a::after {
+    position: absolute;
+    content: "";
+    background-color: #40e2a0;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+header .container .navbar .nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+header .container .navbar i {
+    display: none;
+    color: #fff;
+    cursor: pointer;
+}
+header .container .showcase {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+header .container .showcase h1 {
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+header .container .showcase p {
+    margin-top: 0;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.4;
+    width: 30rem;
+}
+
+header .container .showcase button {
+    margin-top: 1rem;
+    background-color: #40e2a0;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* positioning video up and behind hero-text */
+header .video-container {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*  sizing video */
+header .video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*  dark overlay on video */
+header .video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.82);
+}
+
+
+
+@media (max-width: 990px) {
+
+    #burger {
+        visibility: visible;
+    }
+    header .container .navbar .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        height: 100%;
+        width: 255px;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: 0.4s ease all;
+        z-index: 10;
+    }
+    header .container .navbar .nav-links li a {
+        color: #e7e7e7;
+    }
+    header .container .navbar .nav-links li a::after {
+        background-color: #40e2a0;
+    }
+
+    header .container .navbar .nav-links.active {
+        transform: translateX(0%);
+    }
+    header .container .navbar i {
+        display: block;
+    }
+    header .container .showcase {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+
+/* PRODUCT SECTION */
+
+
+section.product-cards {
+    position: relative;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+
+    gap:5px;
+
+}
+
+div.card-box {
+    background-color: #2b2b2b;
+    box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    height: 450px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+div.card-box > h6 {
+    margin-top: 11px;
+    float: left;
+    font-size: 0.9em;
+}
+
+
+
+div.card-box > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    border: 10px solid #40e2a0;
+    background-color: #40e2a0;
+    border-radius: 3px;
+    float: right;
+    font-weight: bold;
+}
+
+div.card-box > img {
+    width: 230px;
+    border-radius: 10px;
+}
+
+div.product-btns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 15px;
+}
+
+div.product-btns > a {
+    background-color: #40e2a0;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    width: 55%;
+    text-decoration: none;
+}
+div.product-btns > a:last-child {
+    background-color: purple;
+    width: 25%;
+}
+
+
+@media (max-width: 990px) {
+
+    section.product-cards {
+        position: relative;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap:40px;
+    }
+
+    div.card-box {
+        background-color: #2b2b2b;
+        box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
+        border-radius: 10px;
+        width: 350px;
+        height: 500px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    div.card-box > img {
+        width: 330px;
+        border-radius: 10px;
+    }
+
+
+
+}
+
+
+@media (max-width: 760px) {
+
+    section.product-cards {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap:40px;
+    }
+
+    div.card-box {
+        background-color: #2b2b2b;
+        box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
+        border-radius: 10px;
+        width: 350px;
+        height: 500px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    div.card-box > img {
+        width: 330px;
+        border-radius: 10px;
+    }
+
+
+
+}
+
+
+
+/* FOOTER */
+footer {
+    background-color: #2b2b2b;
+    display: grid;
+    grid-template-columns: auto 50% auto;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    margin-top:80px;
+}
+
+footer > div {
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: auto 50% auto;
+    text-align: center;
+    position: relative;
+}
+
+footer > div:last-child {
+    font-size: 18px;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+footer > div > p > a {
+    text-decoration: none;
+    color:#e7e7e7;
+}
+
+h2 {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+margin: 50px 50px;
+    padding-left: 20px;
+    border-left: 5px solid #40e2a0;
+    text-shadow: #2b2b2b;
+
+}
+
+@media (max-width: 760px) {
+    footer {
+
+        grid-template-columns: 50% 50% ;
+        justify-content: space-around;
+    }
+
+
+
+    footer > p {
+    display: none;
+}
+
+}
