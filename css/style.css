@@ -70,29 +70,29 @@ header .container .navbar .nav-links li a {
     background: transparent;
 }
 
-header .container .navbar .nav-links li.buttons > a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0 1rem;
-    font-weight: 400;
-    font-size: 1.05rem;
-    position: relative;
-    outline: none;
-    cursor: pointer;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    background: transparent;
+
+
+header .container .navbar .nav-links li a.active{
+    font-weight: bolder;
 }
 
 
+/* nav "button" */
 header .container .navbar .nav-links li.buttons > a:first-child {
     border: 1px solid transparent;
     background: #40e2a0;
 }
 
-/* styling the background to appear as a underline on hover */
-header .container .navbar .nav-links li a::after {
+header .container .navbar .nav-links li.buttons > a:last-child {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+/*
+styling the background to appear as a underline on hover
+:nth-last-child pseudo class makes this css work on all li-items except the last two
+*/
+header .container .navbar .nav-links li:nth-last-child(n+2) a::after {
     position: absolute;
     content: "";
     background-color: #40e2a0;
@@ -148,7 +148,7 @@ header .container .showcase button {
     cursor: pointer;
 }
 
-/* positioning video up and behind hero-text */
+/* sizing and positioning video up and behind hero-text */
 header .video-container {
     z-index: -1;
     position: absolute;
@@ -176,101 +176,107 @@ header .video-container::after {
 }
 
 
-
-
-
 /* PRODUCT SECTION */
 section.product-cards {
     position: relative;
-    margin-top: 150px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
     justify-items: center;
-    gap: 5px;
+    align-items: center;
+    width: 90%;
 }
 
 div.card-box {
     background-color: #2b2b2b;
-    box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
+    justify-content: space-evenly;
+    box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.71);
     border-radius: 10px;
-    padding: 10px;
-    width: 230px;
-    height: 450px;
+padding: 15px;
+    width: 450px;
+    height: 650px;
     position: relative;
-    display: inline-block;
     overflow: hidden;
 }
 
-div.card-box > h6 {
-    margin-top: 11px;
-    float: left;
-    font-size: 0.9em;
+
+div.card-box > div {
+    display: flex;
+    justify-items: baseline;
+    justify-content: space-between;
+    width: 100%;
 }
 
+div.card-box > div:last-child {
+    margin-top: 70px;
+}
 
-div.card-box > span {
-    display: inline-block;
-    margin-bottom: 12px;
-    border: 10px solid #40e2a0;
-    background-color: #40e2a0;
-    border-radius: 3px;
-    float: right;
+/* green background, green buttons, white font etc ... */
+div.card-box > div:first-child > h5:first-child,
+div.card-box > div:first-child > h5:last-child,
+div.card-box > div:last-child > a {
     font-weight: bold;
+    width: 35%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #40e2a0;
+    color: #fff;
+    box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.71);
+
+}
+
+div.card-box > div:first-child > h5:first-child {
+    border-left: 2px solid mediumpurple;
+    background: none;
+}
+
+div.card-box > div:last-child > a:first-child {
+    width: 55%;
+}
+
+div.card-box > div:last-child > a:last-child {
+    background-color: mediumpurple;
 }
 
 div.card-box > img {
-    width: 210px;
+    text-align: center;
+    width: 100%;
     border-radius: 10px;
 }
 
-div.product-btns {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 15px;
-}
-
-div.product-btns > a {
-    background-color: #40e2a0;
-    padding: 8px;
-    border-radius: 5px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    width: 55%;
-    text-decoration: none;
-}
-
-div.product-btns > a:last-child {
-    background-color: purple;
-    width: 25%;
-}
-
-
-
-/* FOOTER */
 footer {
     background-color: #2b2b2b;
-    display: grid;
-    grid-template-columns: auto 50% auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
     text-align: center;
     position: relative;
     font-size: 14px;
     margin-top: 80px;
+    width: 100%;
 }
 
 footer > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
     font-weight: bold;
-    display: grid;
-    grid-template-columns: auto 50% auto;
     text-align: center;
     position: relative;
+    width: 25%;
+}
+
+footer > div:nth-child(2) {
+    width: 50%;
 }
 
 footer > div:last-child {
-    font-size: 18px;
-    grid-template-columns: auto auto auto auto;
-
+    font-size: large;
+    justify-content: space-around;
 }
 
 footer > div > p > a {
@@ -287,7 +293,7 @@ h2 {
     margin: 50px 50px;
     padding-left: 20px;
     border-left: 5px solid #40e2a0;
-    text-shadow: #2b2b2b;
+    text-shadow: 2px 2px #2b2b2b;
 }
 
 
@@ -296,12 +302,12 @@ h2 {
 
 
 
+
 /* TABLET VIEW */
-@media (max-width: 990px) {
+@media only screen and (max-width: 1010px) {
     #burger {
         visibility: visible;
     }
-
     header .container .navbar .nav-links {
         position: absolute;
         top: 0;
@@ -344,72 +350,9 @@ h2 {
         text-align: center;
     }
 
-    section.product-cards {
-        position: relative;
-        width: 100%;
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
 
-    div.card-box {
-        background-color: #2b2b2b;
-        box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
-        border-radius: 10px;
-        width: 350px;
-        height: 500px;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-    }
-
-    div.card-box > img {
-        width: 330px;
-        border-radius: 10px;
-    }
-
-}
-
-
-
-/* MOBILE VIEW */
-@media (max-width: 675px) {
-    footer {
-
-        grid-template-columns: 50% 50%;
-        justify-content: space-around;
-    }
-
-    section.product-cards {
-        position: relative;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 40px;
-    }
-
-    div.card-box {
-        background-color: #2b2b2b;
-        box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.61);
-        border-radius: 10px;
-        width: 350px;
-        height: 500px;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-    }
-
-    div.card-box > img {
-        width: 330px;
-        border-radius: 10px;
-    }
-
-
-    footer > p {
+    footer > div:first-child{
         display: none;
     }
 
 }
-

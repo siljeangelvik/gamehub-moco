@@ -8,7 +8,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- external stylesheets -->
+    <!-- external stylesheets.
+    the fontawesome is not locally downloaded,
+    and therefore it gives me an error of bad value for attribute.
+    I choose to let it be, because I do not want to download the whole library of icons -->
     <script src="https://kit.fontawesome.com/183e136a7d.js" crossorigin="anonymous"></script>
     <link rel="icon"
           type="image/svg+xml"
@@ -77,56 +80,107 @@
 <h2>Pre Order Now! </h2>
 <section class="product-cards">
     <div class="card-box">
-        <h6>Pre Order</h6>
-        <span>150NOK</span>
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
         <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
+            <h4>Valorant</h4>
+            <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
+
+        <div>
+            <a href="#">View product</a>
+            <a href="#"><i class="fas fa-cart-plus"></i></a>
+        </div>
+    </div>
+
+
+    <div class="card-box">
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
         <h4>Valorant</h4>
         <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
 
-        <div class="product-btns">
+        <div>
             <a href="#">View product</a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
         </div>
     </div>
 
     <div class="card-box">
-        <h6>Pre Order</h6>
-        <span>150NOK</span>
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
         <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
         <h4>Valorant</h4>
         <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
 
-        <div class="product-btns">
+        <div>
             <a href="#">View product</a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
         </div>
     </div>
+
 
     <div class="card-box">
-        <h6>Pre Order</h6>
-        <span>150NOK</span>
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
         <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
         <h4>Valorant</h4>
         <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
 
-        <div class="product-btns">
+        <div>
             <a href="#">View product</a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
         </div>
     </div>
+
 
     <div class="card-box">
-        <h6>Pre Order</h6>
-        <span>150NOK</span>
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
         <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
         <h4>Valorant</h4>
         <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
 
-        <div class="product-btns">
+        <div>
             <a href="#">View product</a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
         </div>
     </div>
+
+
+    <div class="card-box">
+        <div>
+            <h5>Pre Order</h5>
+            <h5>150NOK</h5>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/08/28/16/17/super-mario-2690254_1280.jpg" alt="product image of valorant game">
+
+        <h4>Valorant</h4>
+        <p>Description of the game, lorem ipsum dolor sit amet consectetur adipisicing elit ...</p>
+
+        <div>
+            <a href="#">View product</a>
+            <a href="#"><i class="fas fa-cart-plus"></i></a>
+        </div>
+    </div>
+
+
+
 </section>
 
 <footer>
@@ -160,6 +214,7 @@
     </div>
 </footer>
 </body>
+
 <script>
     const burger = document.getElementById("burger");
     const navLinks = document.querySelector(".nav-links");
