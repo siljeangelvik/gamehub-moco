@@ -38,6 +38,7 @@ header .container .navbar .logo {
     font-size: 2rem;
     text-transform: uppercase;
     color: #40e2a0;
+    text-shadow: 2px 2px 4px #2b2b2b;
     font-weight: 700;
 }
 
@@ -71,8 +72,7 @@ header .container .navbar .nav-links li a {
 }
 
 
-
-header .container .navbar .nav-links li a.active{
+header .container .navbar .nav-links li a.active {
     font-weight: bolder;
 }
 
@@ -138,12 +138,13 @@ header .container .showcase p {
 
 header .container .showcase button {
     margin-top: 1rem;
+    font-weight: bolder;
+    font-size: large;
     background-color: #40e2a0;
     color: #fff;
     border: none;
     outline: none;
     padding: 1rem 1.5rem;
-    font-size: 0.9rem;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -178,56 +179,48 @@ header .video-container::after {
 
 /* PRODUCT SECTION */
 section.product-cards {
-    position: relative;
-    gap: 70px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-evenly;
-    justify-items: center;
-    align-items: center;
-    width: 90%;
+    flex-wrap: wrap;
+    gap:20px;
 }
 
 div.card-box {
     background-color: #2b2b2b;
-    justify-content: space-evenly;
     box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.71);
     border-radius: 10px;
-padding: 15px;
+    padding: 15px;
     width: 450px;
-    height: 650px;
-    position: relative;
+    height: auto;
     overflow: hidden;
 }
 
-
 div.card-box > div {
     display: flex;
-    justify-items: baseline;
     justify-content: space-between;
-    width: 100%;
 }
+
 
 div.card-box > div:last-child {
-    margin-top: 70px;
+    padding: 15px 0;
 }
 
+
 /* green background, green buttons, white font etc ... */
-div.card-box > div:first-child > h5:first-child,
-div.card-box > div:first-child > h5:last-child,
+div.card-box > div:first-child > h5,
 div.card-box > div:last-child > a {
     font-weight: bold;
+    padding: 13px;
     width: 35%;
-    padding: 10px;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
     background-color: #40e2a0;
     color: #fff;
+    display: inline-block;
     box-shadow: 0 1px 30px 10px rgba(43, 43, 43, 0.71);
-
 }
+
 
 div.card-box > div:first-child > h5:first-child {
     border-left: 2px solid mediumpurple;
@@ -235,7 +228,7 @@ div.card-box > div:first-child > h5:first-child {
 }
 
 div.card-box > div:last-child > a:first-child {
-    width: 55%;
+    width: 60%;
 }
 
 div.card-box > div:last-child > a:last-child {
@@ -247,6 +240,7 @@ div.card-box > img {
     width: 100%;
     border-radius: 10px;
 }
+/**/
 
 footer {
     background-color: #2b2b2b;
@@ -293,14 +287,8 @@ h2 {
     margin: 50px 50px;
     padding-left: 20px;
     border-left: 5px solid #40e2a0;
-    text-shadow: 2px 2px #2b2b2b;
+    text-shadow: 2px 2px 4px #2b2b2b;
 }
-
-
-
-
-
-
 
 
 /* TABLET VIEW */
@@ -308,6 +296,7 @@ h2 {
     #burger {
         visibility: visible;
     }
+
     header .container .navbar .nav-links {
         position: absolute;
         top: 0;
@@ -349,10 +338,9 @@ h2 {
         width: 100%;
         text-align: center;
     }
-
-
-    footer > div:first-child{
+    footer > div:first-child {
         display: none;
     }
 
 }
+
